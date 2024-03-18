@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 40ee8b8c74a66fd4d946547f760577dd
+guid: 43572a864fdd2f54a898c2d9c00948c1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,23 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 66c279763ef0f9f42a40fdcd7476d777, type: 2}
+      name: KBall
+    second: {fileID: 2100000, guid: ab7b6e2d20df3f4408bde81e03a30065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KBallEmission
+    second: {fileID: 2100000, guid: 782f05991be64b642995275b49c111b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KBody
+    second: {fileID: 2100000, guid: ea1b414d378acb845a6a94cbdabbef2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: KBtn
+    second: {fileID: 2100000, guid: f4d7fe6f359110d4e95fb7f1d3bde64c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
