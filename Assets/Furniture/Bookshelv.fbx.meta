@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 43572a864fdd2f54a898c2d9c00948c1
+guid: d87ad75e63e5e244c9727c2497da6bd0
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,23 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: KBall
-    second: {fileID: 2100000, guid: ab7b6e2d20df3f4408bde81e03a30065, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KBallEmission
-    second: {fileID: 2100000, guid: 782f05991be64b642995275b49c111b3, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KBody
-    second: {fileID: 2100000, guid: ea1b414d378acb845a6a94cbdabbef2e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KBtn
-    second: {fileID: 2100000, guid: f4d7fe6f359110d4e95fb7f1d3bde64c, type: 2}
+      name: Bookself
+    second: {fileID: 2100000, guid: 7b56ec244c9d8594396c567503bd0ecf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
