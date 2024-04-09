@@ -10,8 +10,23 @@ public class UIController : MonoBehaviour
 
     [Header("TELAS DO CADERNO")] 
     public GameObject telaInicialDoCaderno;
+    [Header("TELAS DE RESPOSTA UNITARIA")]
     public GameObject telaRespostUnit;
     public GameObject telaRespArt;
+    public GameObject telaRespSumula;
+    [Header("TELAS DE PECA PROCESSUAL")]
+    public GameObject telaPeticao;
+    [Header("TELAS DE PETICAO ESPECIAL")]
+    public GameObject telaPeticaoEspecial;
+    public GameObject telaFundEspecial;
+    public GameObject telaRespArtPEspecial;
+    public GameObject telaRespSumulaPEspecial;
+    [Header("TELAS DE PETICAO ORDINARIA")]
+    public GameObject telaPeticaoOrdinaria;
+    public GameObject TelaFundOrdinaria;
+    public GameObject TelaRespArtPOrdinaria;
+    public GameObject TelaRespSumulaPOrdinaria;
+
 
     [Header("TELA DO JOGO")]
     public GameObject telaJogo;
