@@ -766,7 +766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 163164421}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: VoltarTelas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &163164421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1427,7 +1439,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 372838715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: VoltarTelas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &372838715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2034,7 +2058,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 529345056}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: VoltarTelas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &529345056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2610,7 +2646,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 675578990}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &675578990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4739,7 +4787,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1031259427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: VoltarTelas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1031259427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6777,7 +6837,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1598484239}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: VoltarTelas
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1598484239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7390,7 +7462,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1786280022}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1786280022
 MonoBehaviour:
   m_ObjectHideFlags: 0
