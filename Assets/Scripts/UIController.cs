@@ -126,9 +126,71 @@ public class UIController : MonoBehaviour
 
     public void VoltarTelas(int x)
     {
-        //switch (x)
-        //{
-            
-        //}
+        switch (x)
+        {
+            case 5: //Sair da tela inicial do caderno para tela de jogo
+                telaJogo.SetActive(true);
+                telaInicialDoCaderno.SetActive(false);
+                break;
+            case 6: //Sair da tela de resposta unitaria para tela inicial do caderno
+                telaInicialDoCaderno.SetActive(true);
+                telaRespostUnit.SetActive(false);
+                break;
+            case 7: //Sair da tela de resposta em artigo para tela de resposta unitaria
+                telaRespostUnit.SetActive(true);
+                telaRespArt.SetActive(false);
+                break;
+            case 8: //Sair da tela de resposta em sumula para tela de resposta unitaria
+                telaRespostUnit.SetActive(true);
+                telaRespSumula.SetActive(false);
+                break;
+            case 9: //Sair da tela de peticao para tela inicial do caderno
+                telaInicialDoCaderno.SetActive(true);
+                telaPeticao.SetActive(false);
+                break;
+            case 10: //Sair da tela de peticao especial para tela de peticao
+                telaPeticao.SetActive(true);
+                telaPeticaoEspecial.SetActive(false);
+                break;
+            case 11: //Sair da tela de Fundamentacao em Peticao Especial para tela de peticao especial
+                telaPeticaoEspecial.SetActive(true);
+                telaFundEspecial.SetActive(false);
+                break;
+            case 12: //Sair da tela de resposta em artigo para tela de fundamentacao em peticao especial
+                telaFundEspecial.SetActive(true);
+                telaRespArtPEspecial.SetActive(false);
+                break;
+            case 13: //Sair da tela de resposta em sumula para tela de fundamentacao em peticao especial
+                telaFundEspecial.SetActive(true);
+                telaRespSumulaPEspecial.SetActive(false);
+                break;
+            case 14: //Sair da tela de peticao ordinaria para tela de peticao
+                telaPeticao.SetActive(true);
+                telaPeticaoOrdinaria.SetActive(false);
+                break;
+            case 15: //Sair da tela de Fundamentacao em Peticao Ordinaria para tela de peticao ordinaria
+                telaPeticaoOrdinaria.SetActive(true);
+                TelaFundOrdinaria.SetActive(false);
+                break;
+            case 16: //Sair da tela de resposta em artigo para tela de fundamentacao em peticao ordinaria
+                TelaFundOrdinaria.SetActive(true);
+                TelaRespArtPOrdinaria.SetActive(false);
+                break;
+            case 17: //Sair da tela de resposta em sumula para tela de fundamentacao em peticao ordinaria
+                TelaFundOrdinaria.SetActive(true);
+                TelaRespSumulaPOrdinaria.SetActive(false);
+                break;
+            case 18: //Sair da tela do computador para tela de jogo
+                telaJogo.SetActive(true);
+                telaComputador.SetActive(false);
+                break;
+        }
+    }
+
+    public void SairCaderno(GameObject tela)
+    {
+        //Pega a tela atual pelo inspector e desativa ela, logo depois ativa a tela de jogo
+        telaJogo.SetActive(true);
+        tela.SetActive(false);
     }
 }
