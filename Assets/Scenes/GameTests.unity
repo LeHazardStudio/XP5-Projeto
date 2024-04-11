@@ -1956,7 +1956,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3132,7 +3132,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 201395265}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &201395265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3305,7 +3317,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 219552890}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &219552890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6539,7 +6563,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6664,7 +6688,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 420272882}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &420272882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9952,7 +9988,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 575721053}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 13
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &575721053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11738,7 +11786,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12074,7 +12122,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 694564671}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &694564671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14033,7 +14093,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 741175933}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &741175933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16496,8 +16568,8 @@ Camera:
   m_GameObject: {fileID: 850612800}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 4
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -17405,7 +17477,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 915226637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &915226637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28749,7 +28833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1505151746
 Transform:
   m_ObjectHideFlags: 0
@@ -30641,7 +30725,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1613635249}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 12
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1613635249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32289,7 +32385,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1683085236}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1683085236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33075,7 +33183,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1737228546}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1737228546
 MonoBehaviour:
   m_ObjectHideFlags: 0
