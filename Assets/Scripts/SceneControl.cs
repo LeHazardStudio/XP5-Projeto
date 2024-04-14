@@ -6,11 +6,15 @@ using UnityEngine;
 
 public class SceneControl : MonoBehaviour
 {
+
+    public UIController UIController;
     public DataHandler data;
 
     public TMP_Text texto_caso;
     public TMP_Text questaoA;
     public TMP_Text questaoB;
+
+    public TMP_Text confirmacaoResposta;
 
     public string resposta1 = "";
 
@@ -26,15 +30,23 @@ public class SceneControl : MonoBehaviour
         questaoB.text = "b)" + " " + data.rawdata[x][2];
     }
 
-    private void Update()
+    public void confirmarResposta() //Quando o candidato clica no botao de terminar questao, ele ativa a tela de confirmaçao de resposta
     {
-        
-        if(resposta1 != "") //Verifica se a resposta oficial da questao foi atualizada e se sim risca a questao a e ativa a questao b
-        {
-            questaoA.fontStyle = FontStyles.Strikethrough;
-            questaoB.gameObject.SetActive(true);
-        }
+        UIController.telaDeConfirmação();
+        confirmacaoResposta.text = "Sua resposta atual é: " + resposta1 + ". " + "Deseja confirmar sua resposta?";
     }
+
+    public void fecharQuestão() //Quando o candidato confirma resposta, a questao que ele estava é riscada e a proxima aparece 
+    {
+        questaoA.fontStyle = FontStyles.Strikethrough;
+        questaoB.gameObject.SetActive(true);
+        //Tem que fazer algo para ele salvar a resposta atual e saber que agora a resposta é para a proxima questao, para deixar todas salvas para comparar com o gabarito no final
+    }
+        
+        
+            
+        
+    
 }
     
    

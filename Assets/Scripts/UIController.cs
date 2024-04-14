@@ -6,6 +6,8 @@ using TMPro;
 
 public class UIController : MonoBehaviour
 {
+    public SceneControl SC;
+
     [Header("TELAS INICIAIS")] 
     public List<GameObject> telasInicio;
 
@@ -38,8 +40,11 @@ public class UIController : MonoBehaviour
 
     [Header("TELAS DO COMPUTADOR")] 
     public GameObject telaComputador;
+    public GameObject telaDeConfirmacao;
 
     private int contadorTelaInicio = 0;
+
+   
 
     public void Start()
     {
@@ -48,7 +53,7 @@ public class UIController : MonoBehaviour
 
     public void AvancarTelaInicio()
     {
-        if (contadorTelaInicio == 2)
+        if (contadorTelaInicio == 1) //Ta igual a 1 para pular a tela de tutorial durante o primeiro prototipo, vai voltar a ser == 2 quando o tutorial estiver pronto
         {
             telasInicio[contadorTelaInicio].SetActive(false);
             telaJogo.SetActive(true);
@@ -136,7 +141,7 @@ public class UIController : MonoBehaviour
                 telaInicialDoCaderno.SetActive(true);
                 telaRespostUnit.SetActive(false);
                 break;
-            case 7: //Sair da tela de resposta em artigo para tela de resposta unitaria
+            case 7: //Sair da tela de resposta em artigoOuSumula para tela de resposta unitaria
                 telaRespostUnit.SetActive(true);
                 telaRespArt.SetActive(false);
                 break;
@@ -156,7 +161,7 @@ public class UIController : MonoBehaviour
                 telaPeticaoEspecial.SetActive(true);
                 telaFundEspecial.SetActive(false);
                 break;
-            case 12: //Sair da tela de resposta em artigo para tela de fundamentacao em peticao especial
+            case 12: //Sair da tela de resposta em artigoOuSumula para tela de fundamentacao em peticao especial
                 telaFundEspecial.SetActive(true);
                 telaRespArtPEspecial.SetActive(false);
                 break;
@@ -172,7 +177,7 @@ public class UIController : MonoBehaviour
                 telaPeticaoOrdinaria.SetActive(true);
                 TelaFundOrdinaria.SetActive(false);
                 break;
-            case 16: //Sair da tela de resposta em artigo para tela de fundamentacao em peticao ordinaria
+            case 16: //Sair da tela de resposta em artigoOuSumula para tela de fundamentacao em peticao ordinaria
                 TelaFundOrdinaria.SetActive(true);
                 TelaRespArtPOrdinaria.SetActive(false);
                 break;
@@ -187,6 +192,24 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void telaDeConfirmação() //Ativa a tela de confirmação de resposta
+    {
+        telaComputador.SetActive(false);
+        telaDeConfirmacao.SetActive(true);
+    }
+
+    public void ConfirmarSim() //Caso o candidato escolha confirmar a resposta, o sistema desativa aquela questão
+    {
+        telaDeConfirmacao.SetActive(false);
+        telaComputador.SetActive(true);
+        SC.fecharQuestão();
+    }
+
+    public void ConfirmarNao() //Caso o candidato escolha nao confirmar a resposta, o sistema volta pra tela do computador
+    {
+        telaDeConfirmacao.SetActive(false);
+        telaComputador.SetActive(true);
+    }
     public void SairCaderno(GameObject tela)
     {
         //Pega a tela atual pelo inspector e desativa ela, logo depois ativa a tela de jogo
