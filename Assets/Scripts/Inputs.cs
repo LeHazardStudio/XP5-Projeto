@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Inputs : MonoBehaviour
-{
+{/*
     public SceneControl SC;
     public TMP_InputField input;
     public TMP_Dropdown dropdown;
@@ -117,8 +117,8 @@ public class Inputs : MonoBehaviour
 
     public void FinalizarResposta() //Transforma tudo que foi digitado e escolhido pelo candidato em uma resposta oficial da questao e manda para o SceneControl
     {
-        SC.resposta1 = artigoOuSumula +  ", " + paragrafo + ", " + inciso + ", "  + codigoDeProcessoCivil +  ", " + fundamentacao;
+        SC.resposta[0] = artigoOuSumula +  ", " + paragrafo + ", " + inciso + ", "  + codigoDeProcessoCivil +  ", " + fundamentacao;
     }
 
-    
+    */
 }

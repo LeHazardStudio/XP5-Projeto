@@ -8,10 +8,12 @@ using UnityEngine.Networking;
 public class DataHandler : MonoBehaviour
 {
     public List<string[]> rawdata = new List<string[]>();
+
+    private string url =
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc0w32YGFx4r_s0IcowPTkmjOr0qzHsM3A1cLo1bYQMH6Z4IA/formResponse";
     void Start()
     {
         StartCoroutine(Sheet());
-        
     }
 
     IEnumerator Sheet()
@@ -40,5 +42,63 @@ public class DataHandler : MonoBehaviour
                 rawdata.Add(rowArray);
             }
         }
+    }
+
+    public void PegarResposta(List<string>res)
+    {
+        StartCoroutine(Send(res));
+    }
+
+    IEnumerator Send(List<string> resp)
+    {
+        WWWForm form = new WWWForm();
+        for (int i = 0; i < resp.Count; i++)
+        {
+            switch (i)
+            {
+                case 0:
+                    form.AddField("entry.65301063",resp[i]);
+                    break;
+                case 1:
+                    form.AddField("entry.1931470998",resp[i]);
+                    break;
+                case 2:
+                    form.AddField("entry.141025485",resp[i]);
+                    break;
+                case 3:
+                    form.AddField("entry.1806267336",resp[i]);
+                    break;
+                case 4:
+                    form.AddField("entry.134163707",resp[i]);
+                    break;
+                case 5:
+                    form.AddField("entry.163890673",resp[i]);
+                    break;
+                case 6:
+                    form.AddField("entry.750323763",resp[i]);
+                    break;
+                case 7:
+                    form.AddField("entry.250649504",resp[i]);
+                    break;
+                case 8:
+                    form.AddField("entry.821340431",resp[i]);
+                    break;
+                case 9:
+                    form.AddField("entry.1413034820",resp[i]);
+                    break;
+                case 10:
+                    form.AddField("entry.648299047",resp[i]);
+                    break;
+                case 11:
+                    form.AddField("entry.2030424034",resp[i]);
+                    break;
+                case 12:
+                    form.AddField("entry.341881530",resp[i]);
+                    break;
+            }
+        }
+        
+        UnityWebRequest www = UnityWebRequest.Post(url, form);
+        yield return www.SendWebRequest();
     }
 }

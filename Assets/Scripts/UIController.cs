@@ -202,7 +202,7 @@ public class UIController : MonoBehaviour
     {
         telaDeConfirmacao.SetActive(false);
         telaComputador.SetActive(true);
-        SC.fecharQuestão();
+        //SC.fecharQuestão();
     }
 
     public void ConfirmarNao() //Caso o candidato escolha nao confirmar a resposta, o sistema volta pra tela do computador
