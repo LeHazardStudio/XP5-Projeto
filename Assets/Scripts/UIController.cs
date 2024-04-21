@@ -141,7 +141,7 @@ public class UIController : MonoBehaviour
                 telaInicialDoCaderno.SetActive(true);
                 telaRespostUnit.SetActive(false);
                 break;
-            case 7: //Sair da tela de resposta em artigoOuSumula para tela de resposta unitaria
+            case 7: //Sair da tela de resposta em artigo para tela de resposta unitaria
                 telaRespostUnit.SetActive(true);
                 telaRespArt.SetActive(false);
                 break;
@@ -161,7 +161,7 @@ public class UIController : MonoBehaviour
                 telaPeticaoEspecial.SetActive(true);
                 telaFundEspecial.SetActive(false);
                 break;
-            case 12: //Sair da tela de resposta em artigoOuSumula para tela de fundamentacao em peticao especial
+            case 12: //Sair da tela de resposta em artigo para tela de fundamentacao em peticao especial
                 telaFundEspecial.SetActive(true);
                 telaRespArtPEspecial.SetActive(false);
                 break;
@@ -177,7 +177,7 @@ public class UIController : MonoBehaviour
                 telaPeticaoOrdinaria.SetActive(true);
                 TelaFundOrdinaria.SetActive(false);
                 break;
-            case 16: //Sair da tela de resposta em artigoOuSumula para tela de fundamentacao em peticao ordinaria
+            case 16: //Sair da tela de resposta em artigo para tela de fundamentacao em peticao ordinaria
                 TelaFundOrdinaria.SetActive(true);
                 TelaRespArtPOrdinaria.SetActive(false);
                 break;

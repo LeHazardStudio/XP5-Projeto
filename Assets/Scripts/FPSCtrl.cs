@@ -15,10 +15,12 @@ public class FPSCtrl : MonoBehaviour
  
     public float lookSpeed = 2f;
     public float lookXLimit = 45f;
+    public float lookYLimit = 45f;
  
  
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
+    float rotationY = 0;
  
     public bool canMove = true;
  
@@ -69,10 +71,14 @@ public class FPSCtrl : MonoBehaviour
  
         if (canMove)
         {
-            rotationX += -Input.GetAxis("Mouse Y") * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
+
+
+            rotationY += -Input.GetAxis("Mouse Y") * lookSpeed;
+            rotationY = Mathf.Clamp(rotationY, -lookYLimit, lookYLimit);
+            playerCamera.transform.localRotation = Quaternion.Euler(rotationY, 0, 0);
+            transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse Y") * lookSpeed, 0);
+
+    
         }
  
         #endregion
