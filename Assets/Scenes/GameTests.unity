@@ -5127,7 +5127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &225540180
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5135,16 +5135,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225540179}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2059409098}
+  m_Father: {fileID: 1573266390}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 858, y: 597}
+  m_AnchoredPosition: {x: 803.3369, y: 272}
   m_SizeDelta: {x: 160, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225540181
@@ -5190,7 +5190,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 225540182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &225540182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24779,8 +24791,9 @@ MonoBehaviour:
   TelaRespArtPOrdinaria: {fileID: 314369647}
   TelaRespSumulaPOrdinaria: {fileID: 1422744113}
   telaJogo: {fileID: 1270675459}
-  telaComputador: {fileID: 123561862}
+  telaComputador: {fileID: 2059409097}
   telaDeConfirmacao: {fileID: 1573670934}
+  telaPC: {fileID: 1573266389}
   CadernoGeneralImagem: {fileID: 1000721978}
   CadernoUnitariaImagem: {fileID: 402958245}
   CadernoPeticaoImagem: {fileID: 534079490}
@@ -39612,7 +39625,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -41386,6 +41399,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 225540180}
   - {fileID: 1721050888}
   - {fileID: 2019060263}
   - {fileID: 123561863}
@@ -42553,7 +42567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -43550,7 +43564,7 @@ GameObject:
   - component: {fileID: 1660950056}
   - component: {fileID: 1660950055}
   m_Layer: 5
-  m_Name: LinearProgressBar(Clone)
+  m_Name: Barra de Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43591,7 +43605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minimum: 0
   maximum: 100
-  current: 100
+  current: 0
   mask: {fileID: 1505170033}
   fill: {fileID: 1619794768}
 --- !u!114 &1660950056
@@ -51703,6 +51717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIController: {fileID: 955275300}
   data: {fileID: 1924630555}
+  BarraScore: {fileID: 1660950053}
   email: {fileID: 225436760}
   nome: {fileID: 1047777948}
   texto_caso: {fileID: 837656504}
@@ -54779,9 +54794,9 @@ RectTransform:
   m_Children:
   - {fileID: 1299258691}
   - {fileID: 1270675460}
+  - {fileID: 2059409098}
   - {fileID: 1944374099}
   - {fileID: 104292241}
-  - {fileID: 2059409098}
   - {fileID: 396247301}
   - {fileID: 1671486968}
   - {fileID: 1660950054}
@@ -54979,7 +54994,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 955275300}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: AvancarTelaInicio
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 14
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1962718221}
+        m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
+        m_MethodName: Login
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -54989,10 +55016,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2046241431}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: AbrirPc
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1962718221}
         m_TargetAssemblyTypeName: SceneControl, Assembly-CSharp
-        m_MethodName: Login
-        m_Mode: 1
+        m_MethodName: SetQuestion
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -55241,13 +55280,12 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1573670935}
-  - {fileID: 225540180}
   - {fileID: 1573266390}
   m_Father: {fileID: 2046241430}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035156, y: -167}
+  m_AnchoredPosition: {x: -0.0000813802, y: -167}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &2059753510 stripped

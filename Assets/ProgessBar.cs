@@ -63,5 +63,14 @@ public class ProgessBar : MonoBehaviour
         {
             fill.color = Color.yellow;
         }
+
+        if(current < minimum)
+        {
+            current = minimum;
+        }
+        else if(current > maximum)
+        {
+            current = maximum;
+        }
     }
 }

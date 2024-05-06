@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class SceneControl : MonoBehaviour
 {
 
     public UIController UIController;
     public DataHandler data;
+    public GameObject BarraScore; 
 
     [Header("LOGIN")] 
     public TMP_InputField email;
@@ -45,6 +47,8 @@ public class SceneControl : MonoBehaviour
         
     }
 
+
+
     /*public void confirmarResposta() //Quando o candidato clica no botao de terminar questao, ele ativa a tela de confirmaçao de resposta
     {
         UIController.telaDeConfirmação();
@@ -58,17 +62,48 @@ public class SceneControl : MonoBehaviour
             case 0:
                 resposta.Add(art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text +"\n"+fundArt.text);
                 SetQuestion(contadorResposta);
+                ChecarResposta(x, contadorResposta);
                 UIController.telaRespArt.SetActive(false);
+                UIController.CadernoUnitariaImagem.SetActive(false);
                 UIController.telaComputador.SetActive(true);
                 break;
             case 1:
                 resposta.Add(sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text +"\n"+fundSum.text);
                 SetQuestion(contadorResposta);
+                ChecarResposta(x, contadorResposta);
                 UIController.telaRespSumula.SetActive(false);
+                UIController.CadernoUnitariaImagem.SetActive(false);
                 UIController.telaComputador.SetActive(true);
                 break;
         }
         
+    }
+
+    public void ChecarResposta(int x, int y)
+    {
+        switch (x)
+        {
+            case 0:
+                if (art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text == data.gabarito[0][y])
+                {
+                    BarraScore.GetComponent<ProgessBar>().current += 15;
+                }
+                else
+                {
+                    BarraScore.GetComponent<ProgessBar>().current -= 15;
+                }
+                break;
+            case 1:
+                if (sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text == data.gabarito[0][y])
+                {
+                    BarraScore.GetComponent<ProgessBar>().current += 15;
+                }
+                else
+                {
+                    BarraScore.GetComponent<ProgessBar>().current -= 15;
+                }
+                break;
+        }
     }
 
     public void Login()

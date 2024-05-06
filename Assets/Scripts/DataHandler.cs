@@ -8,12 +8,15 @@ using UnityEngine.Networking;
 public class DataHandler : MonoBehaviour
 {
     public List<string[]> rawdata = new List<string[]>();
+    public List<string[]> gabarito = new List<string[]>();
 
     private string url =
         "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc0w32YGFx4r_s0IcowPTkmjOr0qzHsM3A1cLo1bYQMH6Z4IA/formResponse";
+
     void Start()
     {
         StartCoroutine(Sheet());
+        StartCoroutine(Gabarito());
     }
 
     IEnumerator Sheet()
@@ -100,5 +103,35 @@ public class DataHandler : MonoBehaviour
         
         UnityWebRequest www = UnityWebRequest.Post(url, form);
         yield return www.SendWebRequest();
+    }
+
+    IEnumerator Gabarito()
+    {
+        UnityWebRequest www = UnityWebRequest.Get("https://sheets.googleapis.com/v4/spreadsheets/169VdFroMLOg1mQcpZ7sEDJSZLd1chvHy7TGI5EpqVAk/values/Gabarito?key=AIzaSyBgkEX0IODn1kaQc3FefMHAR-1CqVfa4pA");
+        yield return www.SendWebRequest();
+        if (www.result == UnityWebRequest.Result.ProtocolError)
+        {
+            Debug.Log(www.error);
+        }
+        else
+        {
+            string json = www.downloadHandler.text;
+            var o = JSON.Parse(json);
+            JSONArray values = o["values"].AsArray;
+            foreach (JSONArray row in values.Children)
+            {
+                string[] rowArray = new string[row.Count];
+                int i = 0;
+
+                foreach (JSONNode cell in row.Children)
+                {
+                    rowArray[i] = cell.Value;
+                    i++;
+                }
+                gabarito.Add(rowArray);
+                
+            }
+        }
+        Debug.Log(gabarito[0].ToString());
     }
 }

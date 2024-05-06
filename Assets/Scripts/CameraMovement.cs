@@ -22,7 +22,6 @@ public class CameraMovement : MonoBehaviour
         {
             cameraActualZ += 0.05f;
             Camera.position = new Vector3(Camera.position.x, Camera.position.y, cameraActualZ);
-            print(cameraActualZ);
            
         }
         else

@@ -41,6 +41,7 @@ public class UIController : MonoBehaviour
     [Header("TELAS DO COMPUTADOR")] 
     public GameObject telaComputador;
     public GameObject telaDeConfirmacao;
+    public GameObject telaPC;
 
     private int contadorTelaInicio = 0;
 
@@ -67,7 +68,7 @@ public class UIController : MonoBehaviour
             contadorTelaInicio++;
             telasInicio[contadorTelaInicio].SetActive(true);
         }
-    }
+    } 
 
     public void JogoTela(int x)
     {
@@ -77,6 +78,7 @@ public class UIController : MonoBehaviour
                 telaJogo.SetActive(false);
                 telaInicialDoCaderno.SetActive(true);
                 CadernoGeneralImagem.SetActive(true);
+                telaComputador.SetActive(false);
                 break;
             case 1:
                 telaJogo.SetActive(false);
@@ -134,6 +136,15 @@ public class UIController : MonoBehaviour
                 TelaFundOrdinaria.SetActive(false);
                 TelaRespSumulaPOrdinaria.SetActive(true);
                 break;
+            case 14:
+                telasInicio[1].SetActive(false);
+                telaComputador.SetActive(true);
+                break;
+            case 15:
+                telaInicialDoCaderno.SetActive(true);
+                CadernoGeneralImagem.SetActive(true);
+                telaPC.SetActive(false);
+                break;
         }
     }
 
@@ -142,8 +153,9 @@ public class UIController : MonoBehaviour
         switch (x)
         {
             case 5: //Sair da tela inicial do caderno para tela de jogo
-                telaJogo.SetActive(true);
+                //telaJogo.SetActive(true);
                 telaInicialDoCaderno.SetActive(false);
+                CadernoGeneralImagem.SetActive(false);
                 break;
             case 6: //Sair da tela de resposta unitaria para tela inicial do caderno
                 telaInicialDoCaderno.SetActive(true);
@@ -224,8 +236,8 @@ public class UIController : MonoBehaviour
     }
     public void SairCaderno(GameObject tela)
     {
-        //Pega a tela atual pelo inspector e desativa ela, logo depois ativa a tela de jogo
-        telaJogo.SetActive(true);
+        //Pega a tela atual pelo inspector e desativa ela, logo depois ativa a tela de computador
+        telaComputador.SetActive(true);
         tela.SetActive(false);
         CadernoUnitariaImagem.SetActive(false);
         CadernoGeneralImagem.SetActive(false);
