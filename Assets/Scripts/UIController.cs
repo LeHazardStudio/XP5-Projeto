@@ -44,7 +44,10 @@ public class UIController : MonoBehaviour
 
     private int contadorTelaInicio = 0;
 
-   
+    [Header("IMAGENS DO CADERNO")]
+    public GameObject CadernoGeneralImagem;
+    public GameObject CadernoUnitariaImagem;
+    public GameObject CadernoPeticaoImagem;
 
     public void Start()
     {
@@ -73,6 +76,7 @@ public class UIController : MonoBehaviour
             case 0:
                 telaJogo.SetActive(false);
                 telaInicialDoCaderno.SetActive(true);
+                CadernoGeneralImagem.SetActive(true);
                 break;
             case 1:
                 telaJogo.SetActive(false);
@@ -81,10 +85,14 @@ public class UIController : MonoBehaviour
             case 2:
                 telaInicialDoCaderno.SetActive(false);
                 telaRespostUnit.SetActive(true);
+                CadernoGeneralImagem.SetActive(false);
+                CadernoUnitariaImagem.SetActive(true);
                 break;
             case 3:
                 telaInicialDoCaderno.SetActive(false);
                 telaPeticao.SetActive(true);
+                CadernoGeneralImagem.SetActive(false);
+                CadernoPeticaoImagem.SetActive(true);
                 break;
             case 4:
                 telaRespostUnit.SetActive(false);
@@ -140,6 +148,8 @@ public class UIController : MonoBehaviour
             case 6: //Sair da tela de resposta unitaria para tela inicial do caderno
                 telaInicialDoCaderno.SetActive(true);
                 telaRespostUnit.SetActive(false);
+                CadernoUnitariaImagem.SetActive(false);
+                CadernoGeneralImagem.SetActive(true);
                 break;
             case 7: //Sair da tela de resposta em artigo para tela de resposta unitaria
                 telaRespostUnit.SetActive(true);
@@ -152,6 +162,8 @@ public class UIController : MonoBehaviour
             case 9: //Sair da tela de peticao para tela inicial do caderno
                 telaInicialDoCaderno.SetActive(true);
                 telaPeticao.SetActive(false);
+                CadernoPeticaoImagem.SetActive(false);
+                CadernoGeneralImagem.SetActive(true);
                 break;
             case 10: //Sair da tela de peticao especial para tela de peticao
                 telaPeticao.SetActive(true);
@@ -215,5 +227,8 @@ public class UIController : MonoBehaviour
         //Pega a tela atual pelo inspector e desativa ela, logo depois ativa a tela de jogo
         telaJogo.SetActive(true);
         tela.SetActive(false);
+        CadernoUnitariaImagem.SetActive(false);
+        CadernoGeneralImagem.SetActive(false);
+        CadernoPeticaoImagem.SetActive(false);
     }
 }
