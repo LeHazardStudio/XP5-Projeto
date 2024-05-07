@@ -19,6 +19,9 @@ public class SceneControl : MonoBehaviour
     [Header("QUESTAO")]
     public TMP_Text texto_caso;
     public TMP_Text questao;
+
+    [Header("SCORE")]
+    public TMP_Text score;
     
     
     [Header("RESPOSTAS ARTIGO")]
@@ -39,7 +42,7 @@ public class SceneControl : MonoBehaviour
 
     private int contadorResposta = 0;
 
-
+   
     public void SetQuestion(int x) //Seta o texto de tudo da tela do computador, conforme o sheets
     {
         texto_caso.text = data.rawdata[x][0];
@@ -66,6 +69,7 @@ public class SceneControl : MonoBehaviour
                 UIController.telaRespArt.SetActive(false);
                 UIController.CadernoUnitariaImagem.SetActive(false);
                 UIController.telaComputador.SetActive(true);
+                UIController.IconePC.SetActive(false);
                 break;
             case 1:
                 resposta.Add(sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text +"\n"+fundSum.text);
@@ -74,38 +78,93 @@ public class SceneControl : MonoBehaviour
                 UIController.telaRespSumula.SetActive(false);
                 UIController.CadernoUnitariaImagem.SetActive(false);
                 UIController.telaComputador.SetActive(true);
+                UIController.IconePC.SetActive(false);
                 break;
         }
         
     }
 
+    
     public void ChecarResposta(int x, int y)
     {
+        print(data.gabarito[0][y]);
         switch (x)
         {
             case 0:
-                if (art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text == data.gabarito[0][y])
+                /*if (art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text == data.gabarito[0][y])
                 {
-                    BarraScore.GetComponent<ProgessBar>().current += 15;
+                    IncreaseBar();
                 }
                 else
                 {
-                    BarraScore.GetComponent<ProgessBar>().current -= 15;
+                    DecreaseBar();
+                }*/
+                if (data.gabarito[0][y].Contains(art.text) && art.text != "") 
+                {
+                    IncreaseBar();
+                    print("art");
+                    
+                }
+                if (data.gabarito[0][y].Contains(paragArt.text) && paragArt.text != "")
+                {
+                    IncreaseBar();
+                    print("parag");
+                    print(paragArt.text);
+                }
+                //TA COM UM BUG NA VERIFICACAO DO INCISO, POIS COMO A RESPOSTA É VII, SE TIVER QUALQUER UM DOS VALORES QUE COMPOEM O VII COMO RESPOSTA, SEJA I, II, V, ETC. ELE VAI CONTAR COMO CERTO POIS TECNICAMENTE AINDA FAZ DA PARTE DA STRING
+                if (data.gabarito[0][y].Contains(incArt.options[incArt.value].text) && incArt.options[incArt.value].text != "")
+                {
+                    IncreaseBar();
+                    print("inc");
+                }
+                if (data.gabarito[0][y].Contains(codArt.options[codArt.value].text) && codArt.options[codArt.value].text != "")
+                {
+                    IncreaseBar();
+                    print("cod");
                 }
                 break;
             case 1:
-                if (sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text == data.gabarito[0][y])
+                /*if (sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text == data.gabarito[0][y])
                 {
-                    BarraScore.GetComponent<ProgessBar>().current += 15;
+                    IncreaseBar();
                 }
                 else
                 {
-                    BarraScore.GetComponent<ProgessBar>().current -= 15;
+                    DecreaseBar();
+                }*/
+                if (data.gabarito[0][y].Contains(sum.text))
+                {
+                    IncreaseBar();
+                }
+                if (data.gabarito[0][y].Contains(paragSum.text))
+                {
+                    IncreaseBar();
+                }
+                if (data.gabarito[0][y].Contains(incSum.options[incSum.value].text))
+                {
+                    IncreaseBar();
+                }
+                if (data.gabarito[0][y].Contains(codSum.options[codSum.value].text))
+                {
+                    IncreaseBar();
                 }
                 break;
         }
     }
 
+    public void IncreaseBar()
+    {
+        BarraScore.GetComponent<ProgessBar>().current += 25;
+        
+       
+    }
+
+    public void DecreaseBar()
+    {
+        BarraScore.GetComponent<ProgessBar>().current -= 25;
+        
+
+    }
     public void Login()
     {
         resposta.Add(nome.text);
@@ -115,6 +174,11 @@ public class SceneControl : MonoBehaviour
     public void EnviarResposta()
     {
         data.PegarResposta(resposta);
+    }
+
+    public void SetScore()
+    {
+        score.text = score.text + " " + BarraScore.GetComponent<ProgessBar>().current + "/" + BarraScore.GetComponent<ProgessBar>().maximum;
     }
 }
     

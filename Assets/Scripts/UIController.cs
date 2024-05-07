@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -43,12 +44,18 @@ public class UIController : MonoBehaviour
     public GameObject telaDeConfirmacao;
     public GameObject telaPC;
 
+    [Header("TELAS DE FINAL")]
+    public GameObject telaFinal;
+
     private int contadorTelaInicio = 0;
 
     [Header("IMAGENS DO CADERNO")]
     public GameObject CadernoGeneralImagem;
     public GameObject CadernoUnitariaImagem;
     public GameObject CadernoPeticaoImagem;
+
+    [Header("ICONES")]
+    public GameObject IconePC;
 
     public void Start()
     {
@@ -79,6 +86,7 @@ public class UIController : MonoBehaviour
                 telaInicialDoCaderno.SetActive(true);
                 CadernoGeneralImagem.SetActive(true);
                 telaComputador.SetActive(false);
+                
                 break;
             case 1:
                 telaJogo.SetActive(false);
@@ -144,6 +152,11 @@ public class UIController : MonoBehaviour
                 telaInicialDoCaderno.SetActive(true);
                 CadernoGeneralImagem.SetActive(true);
                 telaPC.SetActive(false);
+                break;
+            case 16:
+                telaComputador.SetActive(false);
+                telaPC.SetActive(false);
+                telaFinal.SetActive(true);
                 break;
         }
     }
@@ -242,5 +255,10 @@ public class UIController : MonoBehaviour
         CadernoUnitariaImagem.SetActive(false);
         CadernoGeneralImagem.SetActive(false);
         CadernoPeticaoImagem.SetActive(false);
+    }
+
+    public void ReiniciarCena()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
