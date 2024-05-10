@@ -47,7 +47,8 @@ public class UIController : MonoBehaviour
     [Header("TELAS DE FINAL")]
     public GameObject telaFinal;
 
-    private int contadorTelaInicio = 0;
+    [Header("VARIAVEIS")]
+    public int contadorTelaInicio = 0;
 
     [Header("IMAGENS DO CADERNO")]
     public GameObject CadernoGeneralImagem;
@@ -59,7 +60,7 @@ public class UIController : MonoBehaviour
 
     public void Start()
     {
-        telasInicio[contadorTelaInicio].SetActive(true); 
+        //telasInicio[contadorTelaInicio].SetActive(true); 
     }
 
     public void AvancarTelaInicio()

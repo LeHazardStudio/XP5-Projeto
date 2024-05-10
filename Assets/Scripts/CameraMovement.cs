@@ -7,6 +7,7 @@ public class CameraMovement : MonoBehaviour
     float cameraInitialZ;
     float cameraActualZ;
     public Transform Camera;
+    public UIController UI;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,7 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Camera.position.z < 14)
+        if(Camera.position.z < 13.5f)
         {
             cameraActualZ += 0.05f;
             Camera.position = new Vector3(Camera.position.x, Camera.position.y, cameraActualZ);
@@ -26,6 +27,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
+            UI.telasInicio[UI.contadorTelaInicio].SetActive(true);
             this.GetComponent<CameraMovement>().enabled = false;
         }
     }
