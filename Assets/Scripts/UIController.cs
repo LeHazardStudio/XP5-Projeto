@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
+
     public SceneControl SC;
 
     [Header("TELAS INICIAIS")] 
@@ -43,6 +44,7 @@ public class UIController : MonoBehaviour
     public GameObject telaComputador;
     public GameObject telaDeConfirmacao;
     public GameObject telaPC;
+    public GameObject telaCaso;
 
     [Header("TELAS DE FINAL")]
     public GameObject telaFinal;
@@ -261,5 +263,10 @@ public class UIController : MonoBehaviour
     public void ReiniciarCena()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void FecharTelaCaso()
+    {
+        telaCaso.SetActive(false);
     }
 }

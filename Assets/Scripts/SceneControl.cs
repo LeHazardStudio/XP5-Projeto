@@ -10,7 +10,15 @@ public class SceneControl : MonoBehaviour
 
     public UIController UIController;
     public DataHandler data;
-    public GameObject BarraScore; 
+    public GameObject BarraScore;
+
+    [Header("SPRITES DAS SETAS")]
+    public Sprite avancar1;
+    public Sprite avancar2;
+    public Sprite voltar1;
+    public Sprite voltar2;
+    public Image SetaVoltar;
+    public Image SetaAvancar;
 
     [Header("LOGIN")] 
     public TMP_InputField email;
@@ -19,6 +27,7 @@ public class SceneControl : MonoBehaviour
     [Header("QUESTAO")]
     public TMP_Text texto_caso;
     public TMP_Text questao;
+    public TMP_Text numQuestao;
 
     [Header("SCORE")]
     public TMP_Text score;
@@ -41,14 +50,47 @@ public class SceneControl : MonoBehaviour
     private List<string> resposta = new List<string>();
 
     private int contadorResposta = 0;
+   
 
    
     public void SetQuestion(int x) //Seta o texto de tudo da tela do computador, conforme o sheets
     {
         texto_caso.text = data.rawdata[x][0];
-        questao.text = data.rawdata[x][1];
+        questao.text = "- " + data.rawdata[x][1];
+        //numQuestao.text = "Questão " + data.rawdata.IndexOf(data.rawdata[x][1]); A ideia é ele pegar o valor da questão para colocar como titulo da tela de caso
+
         
     }
+
+    public void NextQuestion()
+    {
+        contadorResposta++;
+        SetQuestion(contadorResposta);
+        if (data.rawdata[contadorResposta][1] != null)
+        {
+            SetaAvancar.sprite = avancar1;
+        }
+        else
+        {
+            SetaAvancar.sprite = avancar2;
+        }
+
+    }
+
+    public void PreviousQuestion()
+    {
+        contadorResposta--;
+        SetQuestion(contadorResposta);
+        if (data.rawdata[contadorResposta][1] != null)
+        {
+            SetaVoltar.sprite = voltar1;
+        }
+        else
+        {
+            SetaVoltar.sprite = voltar2;
+        }
+    }
+
 
 
 
