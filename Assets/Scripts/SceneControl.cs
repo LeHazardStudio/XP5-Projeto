@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class SceneControl : MonoBehaviour
 {
@@ -11,14 +12,15 @@ public class SceneControl : MonoBehaviour
     public UIController UIController;
     public DataHandler data;
     public GameObject BarraScore;
+    public Image SetaAvancar;
+    public Image SetaVoltar;
 
     [Header("SPRITES DAS SETAS")]
     public Sprite avancar1;
     public Sprite avancar2;
     public Sprite voltar1;
     public Sprite voltar2;
-    public Image SetaVoltar;
-    public Image SetaAvancar;
+    
 
     [Header("LOGIN")] 
     public TMP_InputField email;
@@ -55,18 +57,23 @@ public class SceneControl : MonoBehaviour
    
     public void SetQuestion(int x) //Seta o texto de tudo da tela do computador, conforme o sheets
     {
+       
         texto_caso.text = data.rawdata[x][0];
         questao.text = "- " + data.rawdata[x][1];
-        //numQuestao.text = "Questão " + data.rawdata.IndexOf(data.rawdata[x][1]); A ideia é ele pegar o valor da questão para colocar como titulo da tela de caso
+        numQuestao.text = "Questão " + (contadorResposta + 1);
 
         
     }
 
     public void NextQuestion()
     {
-        contadorResposta++;
-        SetQuestion(contadorResposta);
-        if (data.rawdata[contadorResposta][1] != null)
+        
+        if (contadorResposta + 2 < data.rawdata.Count + 1)
+        {
+            contadorResposta++;
+            SetQuestion(contadorResposta);
+        }
+        if(contadorResposta + 2 <= data.rawdata.Count)
         {
             SetaAvancar.sprite = avancar1;
         }
@@ -74,14 +81,7 @@ public class SceneControl : MonoBehaviour
         {
             SetaAvancar.sprite = avancar2;
         }
-
-    }
-
-    public void PreviousQuestion()
-    {
-        contadorResposta--;
-        SetQuestion(contadorResposta);
-        if (data.rawdata[contadorResposta][1] != null)
+        if (contadorResposta - 1 > -1)
         {
             SetaVoltar.sprite = voltar1;
         }
@@ -89,6 +89,37 @@ public class SceneControl : MonoBehaviour
         {
             SetaVoltar.sprite = voltar2;
         }
+        print(contadorResposta + "next");
+
+
+    }
+
+    public void PreviousQuestion()
+    {
+        
+        if (contadorResposta - 1 > -1)
+        {
+            contadorResposta--;
+            SetQuestion(contadorResposta);
+        }
+        if (contadorResposta - 2 >= 0)
+        {
+            SetaVoltar.sprite = voltar1;
+        }
+        else
+        {
+            SetaVoltar.sprite = voltar2;
+        }
+        if (contadorResposta + 1 < data.rawdata.Count + 1)
+        {
+            SetaAvancar.sprite = avancar1;
+        }
+        else
+        {
+            SetaAvancar.sprite = avancar2;
+        }
+        print(contadorResposta + "back");
+
     }
 
 

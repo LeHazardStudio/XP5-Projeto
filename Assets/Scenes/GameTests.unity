@@ -8083,11 +8083,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 828643748750901622, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 828643748750901622, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 828643748750901622, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMin.y
@@ -8135,15 +8135,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209885730318136724, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3209885730318136724, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3209885730318136724, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6199519917847848532, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_Pivot.x
@@ -8239,7 +8239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7640381523396655723, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -90.03999
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16763,7 +16763,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    m_HighlightedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     m_PressedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -16781,7 +16781,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 382110256}
+  m_TargetGraphic: {fileID: 648730685}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -26901,6 +26901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SC: {fileID: 1962718221}
+  Image: {fileID: 0}
   telasInicio:
   - {fileID: 887082166}
   - {fileID: 62093644}
@@ -31233,11 +31234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 828643748750901622, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 828643748750901622, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 828643748750901622, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMin.y
@@ -31285,15 +31286,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3209885730318136724, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3209885730318136724, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3209885730318136724, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -17
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6199519917847848532, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_Pivot.x
@@ -31389,7 +31390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7640381523396655723, guid: 5f420f07f761ac845a04ab7fe59fc1de, type: 3}
       propertyPath: m_SizeDelta.y
-      value: -87.799995
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44447,7 +44448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1573266390
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52734,7 +52735,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
+    m_HighlightedColor: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
     m_PressedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -52752,7 +52753,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 382110256}
+  m_TargetGraphic: {fileID: 1898183499}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -55312,6 +55313,8 @@ MonoBehaviour:
   UIController: {fileID: 955275300}
   data: {fileID: 1924630555}
   BarraScore: {fileID: 1660950053}
+  SetaAvancar: {fileID: 648730685}
+  SetaVoltar: {fileID: 1898183499}
   avancar1: {fileID: 21300000, guid: 266fbb6148b23b8429f17c6c418b0b15, type: 3}
   avancar2: {fileID: 21300000, guid: a666c2f55bdf13d4389973384ea687bf, type: 3}
   voltar1: {fileID: 21300000, guid: 86c1394226907334ebda987486a11a45, type: 3}

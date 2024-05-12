@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
 
     public SceneControl SC;
+    public Image Image;
 
     [Header("TELAS INICIAIS")] 
     public List<GameObject> telasInicio;
