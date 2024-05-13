@@ -27,7 +27,7 @@ public class CameraMovement : MonoBehaviour
         }
         else
         {
-            UI.telasInicio[UI.contadorTelaInicio].SetActive(true);
+            UI.telaAbertura.SetActive(true);
             this.GetComponent<CameraMovement>().enabled = false;
         }
     }

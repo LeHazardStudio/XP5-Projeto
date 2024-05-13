@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
 
     [Header("TELAS INICIAIS")] 
     public List<GameObject> telasInicio;
+    public GameObject telaAbertura;
 
     [Header("TELAS DO CADERNO")] 
     public GameObject telaInicialDoCaderno;
@@ -47,6 +48,7 @@ public class UIController : MonoBehaviour
     public GameObject telaDeConfirmacao;
     public GameObject telaPC;
     public GameObject telaCaso;
+    public GameObject botoesTelaCaso;
 
     [Header("TELAS DE FINAL")]
     public GameObject telaFinal;
@@ -270,5 +272,6 @@ public class UIController : MonoBehaviour
     public void FecharTelaCaso()
     {
         telaCaso.SetActive(false);
+        botoesTelaCaso.SetActive(false);
     }
 }
