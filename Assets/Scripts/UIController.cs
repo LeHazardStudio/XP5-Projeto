@@ -274,4 +274,17 @@ public class UIController : MonoBehaviour
         telaCaso.SetActive(false);
         botoesTelaCaso.SetActive(false);
     }
+
+    public void BotaoHotbar()
+    {
+        if (telaCaso.active == true)
+        {
+            telaCaso.SetActive(false);
+            botoesTelaCaso.SetActive(false);
+        }
+        else
+        {
+            telaCaso.SetActive(true);
+        }
+    }
 }
