@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
 
     public SceneControl SC;
     public Image Image;
+    public Animator cadAnim;
 
     [Header("TELAS INICIAIS")] 
     public List<GameObject> telasInicio;
@@ -58,8 +59,6 @@ public class UIController : MonoBehaviour
 
     [Header("IMAGENS DO CADERNO")]
     public GameObject CadernoGeneralImagem;
-    public GameObject CadernoUnitariaImagem;
-    public GameObject CadernoPeticaoImagem;
 
     [Header("ICONES")]
     public GameObject IconePC;
@@ -101,15 +100,13 @@ public class UIController : MonoBehaviour
                 break;
             case 2:
                 telaInicialDoCaderno.SetActive(false);
-                telaRespostUnit.SetActive(true);
-                CadernoGeneralImagem.SetActive(false);
-                CadernoUnitariaImagem.SetActive(true);
+                cadAnim.SetInteger("Anim", 2);
+                //telaRespostUnit.SetActive(true);
                 break;
             case 3:
                 telaInicialDoCaderno.SetActive(false);
-                telaPeticao.SetActive(true);
-                CadernoGeneralImagem.SetActive(false);
-                CadernoPeticaoImagem.SetActive(true);
+                cadAnim.SetInteger("Anim", 4);
+                //telaPeticao.SetActive(true);
                 break;
             case 4:
                 telaRespostUnit.SetActive(false);
@@ -156,8 +153,9 @@ public class UIController : MonoBehaviour
                 telaComputador.SetActive(true);
                 break;
             case 15:
-                telaInicialDoCaderno.SetActive(true);
+                //telaInicialDoCaderno.SetActive(true);
                 CadernoGeneralImagem.SetActive(true);
+                cadAnim.SetInteger("Anim", 1);
                 telaPC.SetActive(false);
                 break;
             case 16:
@@ -174,13 +172,14 @@ public class UIController : MonoBehaviour
         {
             case 5: //Sair da tela inicial do caderno para tela de jogo
                 //telaJogo.SetActive(true);
+                //cadAnim.SetInteger("Anim", 6);
                 telaInicialDoCaderno.SetActive(false);
                 CadernoGeneralImagem.SetActive(false);
                 break;
             case 6: //Sair da tela de resposta unitaria para tela inicial do caderno
-                telaInicialDoCaderno.SetActive(true);
+                //telaInicialDoCaderno.SetActive(true);
                 telaRespostUnit.SetActive(false);
-                CadernoUnitariaImagem.SetActive(false);
+                cadAnim.SetInteger("Anim", 3);
                 CadernoGeneralImagem.SetActive(true);
                 break;
             case 7: //Sair da tela de resposta em artigo para tela de resposta unitaria
@@ -192,9 +191,9 @@ public class UIController : MonoBehaviour
                 telaRespSumula.SetActive(false);
                 break;
             case 9: //Sair da tela de peticao para tela inicial do caderno
-                telaInicialDoCaderno.SetActive(true);
+                //telaInicialDoCaderno.SetActive(true);
                 telaPeticao.SetActive(false);
-                CadernoPeticaoImagem.SetActive(false);
+                cadAnim.SetInteger("Anim", 5);
                 CadernoGeneralImagem.SetActive(true);
                 break;
             case 10: //Sair da tela de peticao especial para tela de peticao
@@ -259,9 +258,7 @@ public class UIController : MonoBehaviour
         //Pega a tela atual pelo inspector e desativa ela, logo depois ativa a tela de computador
         telaComputador.SetActive(true);
         tela.SetActive(false);
-        CadernoUnitariaImagem.SetActive(false);
         CadernoGeneralImagem.SetActive(false);
-        CadernoPeticaoImagem.SetActive(false);
     }
 
     public void ReiniciarCena()

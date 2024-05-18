@@ -140,7 +140,7 @@ public class SceneControl : MonoBehaviour
                 SetQuestion(contadorResposta);
                 ChecarResposta(x, contadorResposta);
                 UIController.telaRespArt.SetActive(false);
-                UIController.CadernoUnitariaImagem.SetActive(false);
+                UIController.CadernoGeneralImagem.SetActive(false);
                 UIController.telaComputador.SetActive(true);
                 UIController.IconePC.SetActive(false);
                 break;
@@ -149,7 +149,7 @@ public class SceneControl : MonoBehaviour
                 SetQuestion(contadorResposta);
                 ChecarResposta(x, contadorResposta);
                 UIController.telaRespSumula.SetActive(false);
-                UIController.CadernoUnitariaImagem.SetActive(false);
+                UIController.CadernoGeneralImagem.SetActive(false);
                 UIController.telaComputador.SetActive(true);
                 UIController.IconePC.SetActive(false);
                 break;
