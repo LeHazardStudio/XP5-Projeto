@@ -155,7 +155,9 @@ public class UIController : MonoBehaviour
             case 15:
                 //telaInicialDoCaderno.SetActive(true);
                 CadernoGeneralImagem.SetActive(true);
-                cadAnim.SetInteger("Anim", 1);
+                telaInicialDoCaderno.SetActive(true);
+                telaRespostUnit.SetActive(false);
+                //cadAnim.SetInteger("Anim", 1);
                 telaPC.SetActive(false);
                 break;
             case 16:
@@ -179,7 +181,7 @@ public class UIController : MonoBehaviour
             case 6: //Sair da tela de resposta unitaria para tela inicial do caderno
                 //telaInicialDoCaderno.SetActive(true);
                 telaRespostUnit.SetActive(false);
-                cadAnim.SetInteger("Anim", 3);
+                cadAnim.SetInteger("Anim", 5);
                 CadernoGeneralImagem.SetActive(true);
                 break;
             case 7: //Sair da tela de resposta em artigo para tela de resposta unitaria
