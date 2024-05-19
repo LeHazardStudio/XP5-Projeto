@@ -35,7 +35,8 @@ public class PiscarTela : MonoBehaviour
             Camera.transform.rotation = Quaternion.Euler(90,0,0);
             Camera.GetComponent<Camera>().fieldOfView = 55.1f;
             TelasCaderno.SetActive(true);
-            ui.JogoTela(15);
+            ui.CadernoGeneralImagem.SetActive(true);
+            ui.JogoTela(17);
             pcButton.SetActive(true);
             caderno = true;
             TelasIniciais.SetActive(false);
@@ -46,6 +47,7 @@ public class PiscarTela : MonoBehaviour
             Camera.transform.position = new Vector3(36.84f, -8f, 13.5f);
             Camera.transform.rotation = Quaternion.Euler(0, 0, 0);
             Camera.GetComponent<Camera>().fieldOfView = 78.5f;
+            ui.CadernoGeneralImagem.SetActive(false);
             TelasCaderno.SetActive(false);
             ui.VoltarTelas(5);
             pcButton.SetActive(false);

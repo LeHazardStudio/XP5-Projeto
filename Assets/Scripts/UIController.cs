@@ -165,6 +165,22 @@ public class UIController : MonoBehaviour
                 telaPC.SetActive(false);
                 telaFinal.SetActive(true);
                 break;
+            case 17:
+                CadernoGeneralImagem.SetActive(true);
+                telaInicialDoCaderno.SetActive(true);
+                telaRespostUnit.SetActive(false);
+                telaRespArt.SetActive(false);
+                telaRespArtPEspecial.SetActive(false);
+                TelaRespArtPOrdinaria.SetActive(false);
+                telaRespSumula.SetActive(false);
+                telaRespSumulaPEspecial.SetActive(false);
+                TelaRespSumulaPOrdinaria.SetActive(false);
+                telaPeticao.SetActive(false);
+                telaPeticaoEspecial.SetActive(false);
+                telaPeticaoOrdinaria.SetActive(false);
+                telaFundEspecial.SetActive(false);
+                TelaFundOrdinaria.SetActive(false);
+                break;
         }
     }
 
