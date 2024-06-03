@@ -21,22 +21,26 @@ public class CadAnimacaoEv : MonoBehaviour
     {
         UI.telaInicialDoCaderno.SetActive(true);
         UI.telaRespostUnit.SetActive(false);
+        UI.IconePC.SetActive(true);
     }
 
     void AbrirCadernoUnitaria()
     {
         UI.telaRespostUnit.SetActive(true);
+        UI.IconePC.SetActive(true);
     }
 
     void AbrirCadernoPeticao()
     {
         UI.telaPeticao.SetActive(true);
         UI.telaRespostUnit.SetActive(false);
+        UI.IconePC.SetActive(true);
     }
 
     void FecharCadernoGeral()
     {
         UI.telaInicialDoCaderno.SetActive(true);
+        UI.IconePC.SetActive(true);
     }
 
 }

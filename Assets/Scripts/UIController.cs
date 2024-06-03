@@ -63,6 +63,9 @@ public class UIController : MonoBehaviour
     [Header("ICONES")]
     public GameObject IconePC;
 
+    [Header("PISCAR TELA")]
+    public GameObject piscarTela;
+
     public void Start()
     {
         //telasInicio[contadorTelaInicio].SetActive(true); 
@@ -100,11 +103,13 @@ public class UIController : MonoBehaviour
                 break;
             case 2:
                 telaInicialDoCaderno.SetActive(false);
+                IconePC.SetActive(false);
                 cadAnim.SetInteger("Anim", 2);
                 //telaRespostUnit.SetActive(true);
                 break;
             case 3:
                 telaInicialDoCaderno.SetActive(false);
+                IconePC.SetActive(false);
                 cadAnim.SetInteger("Anim", 4);
                 //telaPeticao.SetActive(true);
                 break;
@@ -197,6 +202,7 @@ public class UIController : MonoBehaviour
             case 6: //Sair da tela de resposta unitaria para tela inicial do caderno
                 //telaInicialDoCaderno.SetActive(true);
                 telaRespostUnit.SetActive(false);
+                IconePC.SetActive(false);
                 cadAnim.SetInteger("Anim", 5);
                 CadernoGeneralImagem.SetActive(true);
                 break;
@@ -211,6 +217,7 @@ public class UIController : MonoBehaviour
             case 9: //Sair da tela de peticao para tela inicial do caderno
                 //telaInicialDoCaderno.SetActive(true);
                 telaPeticao.SetActive(false);
+                IconePC.SetActive(false);
                 cadAnim.SetInteger("Anim", 5);
                 CadernoGeneralImagem.SetActive(true);
                 break;

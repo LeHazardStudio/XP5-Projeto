@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,28 +53,28 @@ public class SceneControl : MonoBehaviour
     private List<string> resposta = new List<string>();
 
     private int contadorResposta = 0;
-   
+    private int questionNumber = 0;
 
    
     public void SetQuestion(int x) //Seta o texto de tudo da tela do computador, conforme o sheets
     {
-       
-        texto_caso.text = data.rawdata[x][0];
-        questao.text = "- " + data.rawdata[x][1];
-        numQuestao.text = "Questão " + (contadorResposta + 1);
 
-        
+        numQuestao.text = "Questão " + (x + 1) + " - " + (contadorResposta + 1);
+        texto_caso.text = data.rawdata[x][x];
+        questao.text = "- " + data.rawdata[x][contadorResposta + 1];
+
+
     }
 
     public void NextQuestion()
     {
         
-        if (contadorResposta + 2 < data.rawdata.Count + 1)
+        if (contadorResposta  < data.rawdata.Count + 2)
         {
             contadorResposta++;
-            SetQuestion(contadorResposta);
+            SetQuestion(questionNumber); 
         }
-        if(contadorResposta + 2 <= data.rawdata.Count)
+        if(contadorResposta  < data.rawdata.Count + 2)
         {
             SetaAvancar.sprite = avancar1;
         }
@@ -89,7 +90,7 @@ public class SceneControl : MonoBehaviour
         {
             SetaVoltar.sprite = voltar2;
         }
-        print(contadorResposta + "next");
+       
 
 
     }
@@ -100,9 +101,9 @@ public class SceneControl : MonoBehaviour
         if (contadorResposta - 1 > -1)
         {
             contadorResposta--;
-            SetQuestion(contadorResposta);
+            SetQuestion(questionNumber);
         }
-        if (contadorResposta - 2 >= 0)
+        if (contadorResposta - 1 >= 0)
         {
             SetaVoltar.sprite = voltar1;
         }
@@ -110,7 +111,7 @@ public class SceneControl : MonoBehaviour
         {
             SetaVoltar.sprite = voltar2;
         }
-        if (contadorResposta + 1 < data.rawdata.Count + 1)
+        if (contadorResposta + 1 <= data.rawdata.Count + 2)
         {
             SetaAvancar.sprite = avancar1;
         }
@@ -118,7 +119,7 @@ public class SceneControl : MonoBehaviour
         {
             SetaAvancar.sprite = avancar2;
         }
-        print(contadorResposta + "back");
+        
 
     }
 
@@ -137,21 +138,17 @@ public class SceneControl : MonoBehaviour
         {
             case 0:
                 resposta.Add(art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text +"\n"+fundArt.text);
-                SetQuestion(contadorResposta);
+                SetQuestion(questionNumber);
                 ChecarResposta(x, contadorResposta);
                 UIController.telaRespArt.SetActive(false);
-                UIController.CadernoGeneralImagem.SetActive(false);
-                UIController.telaComputador.SetActive(true);
-                UIController.IconePC.SetActive(false);
+                UIController.piscarTela.SetActive(true);
                 break;
             case 1:
                 resposta.Add(sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text +"\n"+fundSum.text);
-                SetQuestion(contadorResposta);
+                SetQuestion(questionNumber);
                 ChecarResposta(x, contadorResposta);
                 UIController.telaRespSumula.SetActive(false);
-                UIController.CadernoGeneralImagem.SetActive(false);
-                UIController.telaComputador.SetActive(true);
-                UIController.IconePC.SetActive(false);
+                UIController.piscarTela.SetActive(true);
                 break;
         }
         
