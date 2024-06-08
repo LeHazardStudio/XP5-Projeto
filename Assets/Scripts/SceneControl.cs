@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
@@ -56,11 +57,12 @@ public class SceneControl : MonoBehaviour
     private int questionNumber = 0;
 
    
+
     public void SetQuestion(int x) //Seta o texto de tudo da tela do computador, conforme o sheets
     {
-
+        
         numQuestao.text = "Questão " + (x + 1) + " - " + (contadorResposta + 1);
-        texto_caso.text = data.rawdata[x][x];
+        texto_caso.text = data.rawdata[x][0];
         questao.text = "- " + data.rawdata[x][contadorResposta + 1];
 
 
@@ -69,12 +71,18 @@ public class SceneControl : MonoBehaviour
     public void NextQuestion()
     {
         
-        if (contadorResposta  < data.rawdata.Count + 2)
+        if(contadorResposta == data.rawdata[questionNumber].Length - 2 && questionNumber != data.rawdata.Count - 1)
         {
-            contadorResposta++;
-            SetQuestion(questionNumber); 
+            questionNumber++;
+            contadorResposta = -1;
         }
-        if(contadorResposta  < data.rawdata.Count + 2)
+        if (contadorResposta  < data.rawdata[questionNumber].Length - 2)
+        {
+            print(data.rawdata[questionNumber].Length);
+            contadorResposta++;
+            SetQuestion(questionNumber);
+        }
+        if (contadorResposta + 1 <= data.rawdata[questionNumber].Length - 2 || questionNumber + 1 < data.rawdata.Count)
         {
             SetaAvancar.sprite = avancar1;
         }
@@ -82,7 +90,7 @@ public class SceneControl : MonoBehaviour
         {
             SetaAvancar.sprite = avancar2;
         }
-        if (contadorResposta - 1 > -1)
+        if (contadorResposta - 1 >= 0 || questionNumber - 1 > -1)
         {
             SetaVoltar.sprite = voltar1;
         }
@@ -90,20 +98,27 @@ public class SceneControl : MonoBehaviour
         {
             SetaVoltar.sprite = voltar2;
         }
-       
 
+        
 
     }
 
     public void PreviousQuestion()
     {
-        
+     
         if (contadorResposta - 1 > -1)
         {
             contadorResposta--;
             SetQuestion(questionNumber);
         }
-        if (contadorResposta - 1 >= 0)
+        else if(contadorResposta - 1 == -1 && questionNumber != 0)
+        {
+            questionNumber--;
+            contadorResposta = data.rawdata[questionNumber].Length - 2;
+            print("resp " + contadorResposta);
+            SetQuestion(questionNumber);
+        }
+        if (contadorResposta - 1 >= 0 || questionNumber - 1  > -1)
         {
             SetaVoltar.sprite = voltar1;
         }
@@ -111,7 +126,7 @@ public class SceneControl : MonoBehaviour
         {
             SetaVoltar.sprite = voltar2;
         }
-        if (contadorResposta + 1 <= data.rawdata.Count + 2)
+        if (contadorResposta + 1 <= data.rawdata[questionNumber].Length - 2 || questionNumber + 1 < data.rawdata.Count)
         {
             SetaAvancar.sprite = avancar1;
         }
