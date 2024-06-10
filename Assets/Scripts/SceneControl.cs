@@ -224,6 +224,7 @@ public class SceneControl : MonoBehaviour
                     {
                     resposta.Add(" " + "Fundamentação" + " " + i + " " + fundPeticao[i]);
                     }
+                    ChecarResposta(x, questionNumber, contadorResposta);
                     UIController.piscarTela.SetActive(true);
                     break;
             case 3: //peticao especial
@@ -246,6 +247,7 @@ public class SceneControl : MonoBehaviour
         fundPeticao.Add(artPetOrd.text + " " + paragArtPetOrd.text + " " + incArtPetOrd.options[incArtPetOrd.value].text + " " + codArtPetOrd.options[codArtPetOrd.value].text + "\n" + fundArtPetOrd.text);
         UIController.telaRespArtPEspecial.SetActive(false);
         UIController.telaPeticao.SetActive(true);
+        resetFund();
     }
 
     public void ConstruirPeticaoPorSumula()
@@ -253,12 +255,12 @@ public class SceneControl : MonoBehaviour
         fundPeticao.Add(sumPetOrd.text + " " + paragSumPetOrd.text + " " + incSumPetOrd.options[incSumPetOrd.value].text + " " + codSumPetOrd.options[codSumPetOrd.value].text + "\n" + fundSumPetOrd.text);
         UIController.telaRespSumulaPEspecial.SetActive(false);
         UIController.telaPeticao.SetActive(true);
+        resetFund();
     }
 
 
     public void ChecarResposta(int x, int question , int resposta)
     {
-        print(data.gabarito[question][resposta]);
         switch (x)
         {
             case 0: //se for unitária e de artigo
@@ -370,8 +372,56 @@ public class SceneControl : MonoBehaviour
     {
         print(resposta);
         data.PegarResposta(resposta);
+        resetInserts();
+        
         NextQuestion();
     }
+
+    public void resetFund()
+    {
+        
+     incArtPetOrd.value = 0;
+     codArtPetOrd.value = 0;
+     artPetOrd.text = "";
+     paragArtPetOrd.text = "";
+     fundArtPetOrd.text = "";
+     incSumPetOrd.value = 0;
+     codSumPetOrd.value = 0 ;
+     sumPetOrd.text = "";
+     paragSumPetOrd.text = "";
+     fundSumPetOrd.text = "";
+    }
+
+    public void resetInserts()
+    {
+        
+     incArt.value = 0;
+     codArt.value = 0;
+     art.text = "";
+     paragArt.text = "";
+     fundArt.text = "";
+
+
+     incSum.value = 0;
+     codSum.value = 0;
+     sum.text = "";
+     paragSum.text = "";
+     fundSum.text = "";
+
+
+     comarcaPetOrd.value = 0;
+     competenciaPetOrd.value = 0;
+     fundPetOrd.text = "";
+
+
+     comarcaPetEsp.value = 0;
+     competenciaPetEsp.value = 0;
+     procedimentoPetEsp.value = 0;
+     fundPetEsp.text = "";
+
+     resetFund();
+    }
+
 
     /*public void SetScore()
     {

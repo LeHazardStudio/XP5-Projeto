@@ -16855,7 +16855,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Tela de Fundamenta\xE7\xE3o Jur\xEDdica"
+  m_text: "Tela de Fundamenta\xE7\xE3o "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7ce8c01046342974dac520034ea215cd, type: 2}
   m_sharedMaterial: {fileID: 4126057342399328090, guid: 7ce8c01046342974dac520034ea215cd, type: 2}
@@ -36518,10 +36518,22 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1386842190}
+  m_TargetGraphic: {fileID: 1486592464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1386842190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38556,7 +38568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1486592464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 955275300}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: JogoTela
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1486592464
 MonoBehaviour:
   m_ObjectHideFlags: 0

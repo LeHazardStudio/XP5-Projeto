@@ -31,7 +31,7 @@ public class PiscarTela : MonoBehaviour
         barraScore.SetActive(true);
         if (!caderno)
         {
-            Camera.transform.position = new Vector3(35.62f, -8.11f, 14.8f);
+            Camera.transform.position = new Vector3(34.92f, -8.11f, 14.8f);
             Camera.transform.rotation = Quaternion.Euler(90,0,0);
             Camera.GetComponent<Camera>().fieldOfView = 55.1f;
             TelasCaderno.SetActive(true);
