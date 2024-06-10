@@ -122,6 +122,7 @@ public class SceneControl : MonoBehaviour
         questao.text = "- " + data.rawdata[x][contadorResposta + 1];
 
         respostas.text = "" + (resposta.Count - 2);
+
     }
 
     public void NextQuestion()
@@ -134,7 +135,6 @@ public class SceneControl : MonoBehaviour
         }
         if (contadorResposta  < data.rawdata[questionNumber].Length - 2)
         {
-            print(data.rawdata[questionNumber].Length);
             contadorResposta++;
             SetQuestion(questionNumber);
         }
@@ -171,7 +171,6 @@ public class SceneControl : MonoBehaviour
         {
             questionNumber--;
             contadorResposta = data.rawdata[questionNumber].Length - 2;
-            print("resp " + contadorResposta);
             SetQuestion(questionNumber);
         }
         if (contadorResposta - 1 >= 0 || questionNumber - 1  > -1)
@@ -205,6 +204,7 @@ public class SceneControl : MonoBehaviour
 
     public void Resposta(int x)
     {
+        NextQuestion();
         switch (x)
         {
             case 0: //unitaria e artigo
@@ -280,24 +280,24 @@ public class SceneControl : MonoBehaviour
                 if (data.gabarito[question][resposta].Contains(art.text) && art.text != "") 
                 {
                     //IncreaseBar();
-                    print("art");
+                  
                     
                 }
                 if (data.gabarito[question][resposta].Contains(paragArt.text) && paragArt.text != "")
                 {
                    // IncreaseBar();
-                    print("parag");
-                    print(paragArt.text);
+                
+                 
                 }
                 if (data.gabarito[question][resposta].Contains(incArt.options[incArt.value].text) && incArt.options[incArt.value].text != "")
                 {
                     //IncreaseBar();
-                    print("inc");
+                 
                 }
                 if (data.gabarito[question][resposta].Contains(codArt.options[codArt.value].text) && codArt.options[codArt.value].text != "")
                 {
                     //IncreaseBar();
-                    print("cod");
+              
                 }
                 break;
             case 1: //se for unitária e de sumula
@@ -331,24 +331,23 @@ public class SceneControl : MonoBehaviour
                 if (data.gabarito[question][resposta].Contains(art.text) && art.text != "")
                 {
                     //IncreaseBar();
-                    print("art");
+                  
 
                 }
                 if (data.gabarito[question][resposta].Contains(paragArt.text) && paragArt.text != "")
                 {
                     //IncreaseBar();
-                    print("parag");
-                    print(paragArt.text);
+           
                 }
                 if (data.gabarito[question][resposta].Contains(incArt.options[incArt.value].text) && incArt.options[incArt.value].text != "")
                 {
                     //IncreaseBar();
-                    print("inc");
+            
                 }
                 if (data.gabarito[question][resposta].Contains(codArt.options[codArt.value].text) && codArt.options[codArt.value].text != "")
                 {
                     //IncreaseBar();
-                    print("cod");
+      
                 }
                 break;
         }
@@ -375,11 +374,24 @@ public class SceneControl : MonoBehaviour
 
     public void EnviarResposta()
     {
-        print(resposta[contadorResposta + 2]);
+        
         data.PegarResposta(resposta);
         resetInserts();
         //progressBar.GetComponent<Animator>().SetBool("pause", false);
         progressBar.GetComponent<Animator>().SetFloat("speed", 1);
+        int answers = 0;
+        for (int i = 0; i < data.rawdata.Count; i++)
+        {
+            for (int j = 0; j < data.rawdata[i].Length; j++)
+            {
+                answers++;
+            }
+        }
+        if (resposta.Count == answers)
+        {
+            UIController.botaoFinalizar.SetActive(true);
+        }
+        
     }
 
     public void resetFund()

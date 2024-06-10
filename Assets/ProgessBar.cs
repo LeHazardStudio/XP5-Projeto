@@ -81,14 +81,14 @@ public class ProgessBar : MonoBehaviour
  public void setAnim()
     {
         currenteframe++;
-        animCuts = (int)(96 / answers());
-        if(currenteframe == animCuts * sc.resposta.Count +  1)
+        animCuts = (int)(98 / answers());
+        if(currenteframe > animCuts * sc.resposta.Count - 2)
         {
             //this.GetComponent<Animator>().SetBool("pause",true);
             this.GetComponent<Animator>().SetFloat("speed", 0);
         }
     }
-    int answers()
+    float answers()
     {
         int answer = 0;
         for (int i = 0; i < sc.data.rawdata.Count; i++)

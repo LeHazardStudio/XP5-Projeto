@@ -50,6 +50,7 @@ public class UIController : MonoBehaviour
     public GameObject telaPC;
     public GameObject telaCaso;
     public GameObject botoesTelaCaso;
+    public GameObject botaoFinalizar;
 
     [Header("TELAS DE FINAL")]
     public GameObject telaFinal;
