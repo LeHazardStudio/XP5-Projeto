@@ -16,7 +16,7 @@ public class SceneControl : MonoBehaviour
     public GameObject BarraScore;
     public Image SetaAvancar;
     public Image SetaVoltar;
-    public Animator progressBar;
+    public ProgessBar progressBar;
 
     [Header("SPRITES DAS SETAS")]
     public Sprite avancar1;
@@ -99,11 +99,14 @@ public class SceneControl : MonoBehaviour
 
     [Header("OUTROS")]
     public TMP_Text confirmacaoResposta;
-    private List<string> resposta = new List<string>();
+    public List<string> resposta = new List<string>();
     private List<string> fundPeticao = new List<string>();
 
     private int contadorResposta = 0;
     private int questionNumber = 0;
+    private float numberOfFrames;
+    private int currentFrame;
+    private int animCuts;
 
     private bool petOrd;
 
@@ -374,8 +377,8 @@ public class SceneControl : MonoBehaviour
         print(resposta[0]);
         data.PegarResposta(resposta);
         resetInserts();
-        AvancarBarra();
-        NextQuestion();
+        //progressBar.GetComponent<Animator>().SetBool("pause", false);
+        progressBar.GetComponent<Animator>().SetFloat("speed", 1);
     }
 
     public void resetFund()
@@ -422,31 +425,7 @@ public class SceneControl : MonoBehaviour
 
      resetFund();
     }
-
-    public void AvancarBarra()
-    {
-        float animCuts;
-        float questions = 0;
-        for(int i = 0; i < data.rawdata.Count; i++)
-        {
-            for(int j = 0; j < data.rawdata[i].Length; j++)
-            {
-                questions++;
-            }
-        }
-        animCuts = 96 / questions;
-
-        if (progressBar.GetCurrentAnimatorStateInfo(0).normalizedTime == animCuts * resposta.Count)
-        {
-            progressBar.speed = 0;
-        }
-        else
-        {
-            progressBar.speed = 1;
-        }
-
-
-    }
+    
     /*public void SetScore()
     {
         score.text = score.text + " " + BarraScore.GetComponent<ProgessBar>().current + "/" + BarraScore.GetComponent<ProgessBar>().maximum;

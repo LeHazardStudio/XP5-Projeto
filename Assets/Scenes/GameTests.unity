@@ -23438,6 +23438,7 @@ GameObject:
   - component: {fileID: 902656979}
   - component: {fileID: 902656978}
   - component: {fileID: 902656980}
+  - component: {fileID: 902656981}
   m_Layer: 0
   m_Name: progressbar
   m_TagString: Untagged
@@ -23524,6 +23525,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &902656981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 902656976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353f08794e1554d49bb9847c4fbeaa9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sc: {fileID: 1962718221}
 --- !u!1 &902815296
 GameObject:
   m_ObjectHideFlags: 0
@@ -52659,10 +52673,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   UIController: {fileID: 955275300}
   data: {fileID: 1924630555}
-  BarraScore: {fileID: 0}
+  BarraScore: {fileID: 902656976}
   SetaAvancar: {fileID: 648730685}
   SetaVoltar: {fileID: 1898183499}
-  progressBar: {fileID: 902656980}
+  progressBar: {fileID: 902656981}
   avancar1: {fileID: 21300000, guid: 266fbb6148b23b8429f17c6c418b0b15, type: 3}
   avancar2: {fileID: 21300000, guid: a666c2f55bdf13d4389973384ea687bf, type: 3}
   voltar1: {fileID: 21300000, guid: 86c1394226907334ebda987486a11a45, type: 3}
@@ -52712,6 +52726,7 @@ MonoBehaviour:
   paragSumPetEsp: {fileID: 1577374934}
   fundSumPetEsp: {fileID: 1352732825}
   confirmacaoResposta: {fileID: 1714626090}
+  resposta: []
 --- !u!1 &1964440844
 GameObject:
   m_ObjectHideFlags: 0

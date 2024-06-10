@@ -9,8 +9,12 @@ using UnityEditor;
 [ExecuteInEditMode()]
 public class ProgessBar : MonoBehaviour
 {
-
-#if UNITY_EDITOR
+    int answersNumber = 0;
+    int animCuts = 0;
+    int currenteframe = 0;
+    public SceneControl sc;
+        
+/*#if UNITY_EDITOR
     [MenuItem("GameObject/UI/LinearProgressBar")]
     public static void AddLinearProgressBar()
     {
@@ -72,5 +76,29 @@ public class ProgessBar : MonoBehaviour
         {
             current = maximum;
         }
+    }*/
+
+ public void setAnim()
+    {
+        currenteframe++;
+        animCuts = (int)(96 / answers());
+        if(currenteframe == animCuts * sc.resposta.Count +  1)
+        {
+            //this.GetComponent<Animator>().SetBool("pause",true);
+            this.GetComponent<Animator>().SetFloat("speed", 0);
+            print("aaa" + currenteframe);
+        }
+    }
+    int answers()
+    {
+        int answer = 0;
+        for (int i = 0; i < sc.data.rawdata.Count; i++)
+        {
+            for (int j = 0; j < sc.data.rawdata[i].Length; j++)
+            {
+                answer++;
+            }
+        }
+        return answer - 1;
     }
 }
