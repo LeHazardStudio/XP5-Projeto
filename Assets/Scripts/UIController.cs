@@ -131,6 +131,7 @@ public class UIController : MonoBehaviour
                 break;
             case 8:
                 telaPeticaoEspecial.SetActive(false);
+                telaPeticaoOrdinaria.SetActive(false);
                 telaFundEspecial.SetActive(true);
                 break;
             case 9:
@@ -242,7 +243,7 @@ public class UIController : MonoBehaviour
                 telaPeticaoOrdinaria.SetActive(false);
                 break;
             case 15: //Sair da tela de Fundamentacao em Peticao Ordinaria para tela de peticao ordinaria
-                telaPeticaoOrdinaria.SetActive(true);
+                telaPeticao.SetActive(true);
                 TelaFundOrdinaria.SetActive(false);
                 break;
             case 16: //Sair da tela de resposta em artigo para tela de fundamentacao em peticao ordinaria

@@ -35,26 +35,78 @@ public class SceneControl : MonoBehaviour
 
     [Header("SCORE")]
     public TMP_Text score;
+    public TMP_Text respostas;
     
     
-    [Header("RESPOSTAS ARTIGO")]
+    [Header("RESPOSTAS ARTIGO - RESP UNITARIA")]
     public TMP_Dropdown incArt;
     public TMP_Dropdown codArt;
     public TMP_InputField art;
     public TMP_InputField paragArt;
     public TMP_InputField fundArt;
     
-    [Header("RESPOSTA SUMULA")]
+    [Header("RESPOSTA SUMULA - RESP UNITARIA")]
     public TMP_Dropdown incSum;
     public TMP_Dropdown codSum;
     public TMP_InputField sum;
     public TMP_InputField paragSum;
     public TMP_InputField fundSum;
+
+    [Header("PETICAO ORDINARIA")]
+    public TMP_Dropdown comarcaPetOrd;
+    public TMP_Dropdown competenciaPetOrd;
+    public TMP_InputField fundPetOrd;
+
+    [Header("RESPOSTAS ARTIGO - PET ORDINARIA")]
+    public TMP_Dropdown incArtPetOrd;
+    public TMP_Dropdown codArtPetOrd;
+    public TMP_InputField artPetOrd;
+    public TMP_InputField paragArtPetOrd;
+    public TMP_InputField fundArtPetOrd;
+
+
+    [Header("RESPOSTA SUMULA - PET ORDINARIA")]
+    public TMP_Dropdown incSumPetOrd;
+    public TMP_Dropdown codSumPetOrd;
+    public TMP_InputField sumPetOrd;
+    public TMP_InputField paragSumPetOrd;
+    public TMP_InputField fundSumPetOrd;
+
+
+    [Header("PETICAO ESPECIAL")]
+    public TMP_Dropdown comarcaPetEsp;
+    public TMP_Dropdown competenciaPetEsp;
+    public TMP_Dropdown procedimentoPetEsp;
+    public TMP_InputField fundPetEsp;
+
+    [Header("RESPOSTAS ARTIGO - PET ESPECIAL")]
+    public TMP_Dropdown incArtPetEsp;
+    public TMP_Dropdown codArtPetEsp;
+    public TMP_InputField artPetEsp;
+    public TMP_InputField paragArtPetEsp;
+    public TMP_InputField fundArtPetEsp;
+
+
+    [Header("RESPOSTA SUMULA - PET ESPECIAL")]
+    public TMP_Dropdown incSumPetEsp;
+    public TMP_Dropdown codSumPetEsp;
+    public TMP_InputField sumPetEsp;
+    public TMP_InputField paragSumPetEsp;
+    public TMP_InputField fundSumPetEsp;
+
+
+
+    [Header("OUTROS")]
     public TMP_Text confirmacaoResposta;
     private List<string> resposta = new List<string>();
+    private List<string> fundPeticao = new List<string>();
 
     private int contadorResposta = 0;
     private int questionNumber = 0;
+
+    private bool petOrd;
+
+    private bool petArt;
 
    
 
@@ -65,7 +117,7 @@ public class SceneControl : MonoBehaviour
         texto_caso.text = data.rawdata[x][0];
         questao.text = "- " + data.rawdata[x][contadorResposta + 1];
 
-
+        respostas.text = "" + (resposta.Count - 2);
     }
 
     public void NextQuestion()
@@ -151,31 +203,65 @@ public class SceneControl : MonoBehaviour
     {
         switch (x)
         {
-            case 0:
-                resposta.Add(art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text +"\n"+fundArt.text);
+            case 0: //unitaria e artigo
+                resposta.Add((questionNumber + 1) + " - " + (contadorResposta + 1) + " : " + art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text +"\n"+fundArt.text);
                 SetQuestion(questionNumber);
-                ChecarResposta(x, contadorResposta);
+                ChecarResposta(x, questionNumber, contadorResposta);
                 UIController.telaRespArt.SetActive(false);
                 UIController.piscarTela.SetActive(true);
                 break;
-            case 1:
-                resposta.Add(sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text +"\n"+fundSum.text);
+            case 1: //unitaria e sumula
+                resposta.Add((questionNumber + 1) + " - " + (contadorResposta + 1) + " : " + sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text +"\n"+fundSum.text);
                 SetQuestion(questionNumber);
-                ChecarResposta(x, contadorResposta);
+                ChecarResposta(x, questionNumber, contadorResposta);
                 UIController.telaRespSumula.SetActive(false);
                 UIController.piscarTela.SetActive(true);
                 break;
+            case 2: //peticao ordinaria
+            
+                    resposta.Add((questionNumber + 1) + " - " + (contadorResposta + 1) + " : " + comarcaPetOrd.options[comarcaPetOrd.value].text + " " + competenciaPetOrd.options[competenciaPetOrd.value].text + "\n" + fundPetOrd.text);
+                    for(int i = 0; i < fundPeticao.Count; i++)
+                    {
+                    resposta.Add(" " + "Fundamentação" + " " + i + " " + fundPeticao[i]);
+                    }
+                    UIController.piscarTela.SetActive(true);
+                    break;
+            case 3: //peticao especial
+                
+                    resposta.Add((questionNumber + 1) + " - " + (contadorResposta + 1) + " : " + comarcaPetEsp.options[comarcaPetEsp.value].text + " " + competenciaPetEsp.options[competenciaPetEsp.value].text + " " + procedimentoPetEsp.options[competenciaPetEsp.value].text + "\n " + fundPetEsp.text);
+                    for(int i = 0; i < fundPeticao.Count; i++)
+                    {
+                    resposta.Add(" " + "Fundamentação" + " " + i + " " + fundPeticao[i]);
+                    }
+                    ChecarResposta(x, questionNumber, contadorResposta);
+                    UIController.piscarTela.SetActive(true);
+                    break;
         }
+        EnviarResposta();
         
     }
 
-    
-    public void ChecarResposta(int x, int y)
+    public void ConstruirPeticaoPorArtigo()
     {
-        print(data.gabarito[0][y]);
+        fundPeticao.Add(artPetOrd.text + " " + paragArtPetOrd.text + " " + incArtPetOrd.options[incArtPetOrd.value].text + " " + codArtPetOrd.options[codArtPetOrd.value].text + "\n" + fundArtPetOrd.text);
+        UIController.telaRespArtPEspecial.SetActive(false);
+        UIController.telaPeticao.SetActive(true);
+    }
+
+    public void ConstruirPeticaoPorSumula()
+    {
+        fundPeticao.Add(sumPetOrd.text + " " + paragSumPetOrd.text + " " + incSumPetOrd.options[incSumPetOrd.value].text + " " + codSumPetOrd.options[codSumPetOrd.value].text + "\n" + fundSumPetOrd.text);
+        UIController.telaRespSumulaPEspecial.SetActive(false);
+        UIController.telaPeticao.SetActive(true);
+    }
+
+
+    public void ChecarResposta(int x, int question , int resposta)
+    {
+        print(data.gabarito[question][resposta]);
         switch (x)
         {
-            case 0:
+            case 0: //se for unitária e de artigo
                 /*if (art.text + " " + paragArt.text + " " + incArt.options[incArt.value].text + " " + codArt.options[codArt.value].text == data.gabarito[0][y])
                 {
                     IncreaseBar();
@@ -184,31 +270,30 @@ public class SceneControl : MonoBehaviour
                 {
                     DecreaseBar();
                 }*/
-                if (data.gabarito[0][y].Contains(art.text) && art.text != "") 
+                if (data.gabarito[question][resposta].Contains(art.text) && art.text != "") 
                 {
-                    IncreaseBar();
+                    //IncreaseBar();
                     print("art");
                     
                 }
-                if (data.gabarito[0][y].Contains(paragArt.text) && paragArt.text != "")
+                if (data.gabarito[question][resposta].Contains(paragArt.text) && paragArt.text != "")
                 {
-                    IncreaseBar();
+                   // IncreaseBar();
                     print("parag");
                     print(paragArt.text);
                 }
-                //TA COM UM BUG NA VERIFICACAO DO INCISO, POIS COMO A RESPOSTA É VII, SE TIVER QUALQUER UM DOS VALORES QUE COMPOEM O VII COMO RESPOSTA, SEJA I, II, V, ETC. ELE VAI CONTAR COMO CERTO POIS TECNICAMENTE AINDA FAZ DA PARTE DA STRING
-                if (data.gabarito[0][y].Contains(incArt.options[incArt.value].text) && incArt.options[incArt.value].text != "")
+                if (data.gabarito[question][resposta].Contains(incArt.options[incArt.value].text) && incArt.options[incArt.value].text != "")
                 {
-                    IncreaseBar();
+                    //IncreaseBar();
                     print("inc");
                 }
-                if (data.gabarito[0][y].Contains(codArt.options[codArt.value].text) && codArt.options[codArt.value].text != "")
+                if (data.gabarito[question][resposta].Contains(codArt.options[codArt.value].text) && codArt.options[codArt.value].text != "")
                 {
-                    IncreaseBar();
+                    //IncreaseBar();
                     print("cod");
                 }
                 break;
-            case 1:
+            case 1: //se for unitária e de sumula
                 /*if (sum.text + " " + paragSum.text + " " + incSum.options[incSum.value].text + " " + codSum.options[codSum.value].text == data.gabarito[0][y])
                 {
                     IncreaseBar();
@@ -217,27 +302,52 @@ public class SceneControl : MonoBehaviour
                 {
                     DecreaseBar();
                 }*/
-                if (data.gabarito[0][y].Contains(sum.text))
+                if (data.gabarito[question][resposta].Contains(sum.text))
                 {
-                    IncreaseBar();
+                   // IncreaseBar();
                 }
-                if (data.gabarito[0][y].Contains(paragSum.text))
+                if (data.gabarito[question][resposta].Contains(paragSum.text))
                 {
-                    IncreaseBar();
+                    //IncreaseBar();
                 }
-                if (data.gabarito[0][y].Contains(incSum.options[incSum.value].text))
+                if (data.gabarito[question][resposta].Contains(incSum.options[incSum.value].text))
                 {
-                    IncreaseBar();
+                    //IncreaseBar();
                 }
-                if (data.gabarito[0][y].Contains(codSum.options[codSum.value].text))
+                if (data.gabarito[question][resposta].Contains(codSum.options[codSum.value].text))
                 {
-                    IncreaseBar();
+                    //IncreaseBar();
+                }
+                break;
+            case 2: //Se for petição ordinária e de artigo
+               
+                if (data.gabarito[question][resposta].Contains(art.text) && art.text != "")
+                {
+                    //IncreaseBar();
+                    print("art");
+
+                }
+                if (data.gabarito[question][resposta].Contains(paragArt.text) && paragArt.text != "")
+                {
+                    //IncreaseBar();
+                    print("parag");
+                    print(paragArt.text);
+                }
+                if (data.gabarito[question][resposta].Contains(incArt.options[incArt.value].text) && incArt.options[incArt.value].text != "")
+                {
+                    //IncreaseBar();
+                    print("inc");
+                }
+                if (data.gabarito[question][resposta].Contains(codArt.options[codArt.value].text) && codArt.options[codArt.value].text != "")
+                {
+                    //IncreaseBar();
+                    print("cod");
                 }
                 break;
         }
     }
 
-    public void IncreaseBar()
+    /*public void IncreaseBar()
     {
         BarraScore.GetComponent<ProgessBar>().current += 25;
         
@@ -249,7 +359,7 @@ public class SceneControl : MonoBehaviour
         BarraScore.GetComponent<ProgessBar>().current -= 25;
         
 
-    }
+    }*/
     public void Login()
     {
         resposta.Add(nome.text);
@@ -258,13 +368,18 @@ public class SceneControl : MonoBehaviour
 
     public void EnviarResposta()
     {
+        print(resposta);
         data.PegarResposta(resposta);
+        NextQuestion();
     }
 
-    public void SetScore()
+    /*public void SetScore()
     {
         score.text = score.text + " " + BarraScore.GetComponent<ProgessBar>().current + "/" + BarraScore.GetComponent<ProgessBar>().maximum;
-    }
+    }*/
+
+
+   
 }
     
    

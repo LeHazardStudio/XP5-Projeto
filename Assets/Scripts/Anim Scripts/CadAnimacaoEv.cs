@@ -27,6 +27,7 @@ public class CadAnimacaoEv : MonoBehaviour
     void AbrirCadernoUnitaria()
     {
         UI.telaRespostUnit.SetActive(true);
+        UI.telaInicialDoCaderno.SetActive(false);
         UI.IconePC.SetActive(true);
     }
 
