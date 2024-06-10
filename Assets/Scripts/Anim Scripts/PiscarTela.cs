@@ -55,7 +55,7 @@ public class PiscarTela : MonoBehaviour
             telaPC.SetActive(true);
             TelasIniciais.SetActive(true);
         }
-        barraScore.SetActive(false);
+        
      
     }
 

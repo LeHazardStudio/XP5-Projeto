@@ -16,6 +16,7 @@ public class SceneControl : MonoBehaviour
     public GameObject BarraScore;
     public Image SetaAvancar;
     public Image SetaVoltar;
+    public Animator progressBar;
 
     [Header("SPRITES DAS SETAS")]
     public Sprite avancar1;
@@ -370,10 +371,10 @@ public class SceneControl : MonoBehaviour
 
     public void EnviarResposta()
     {
-        print(resposta);
+        print(resposta[0]);
         data.PegarResposta(resposta);
         resetInserts();
-        
+        AvancarBarra();
         NextQuestion();
     }
 
@@ -422,7 +423,30 @@ public class SceneControl : MonoBehaviour
      resetFund();
     }
 
+    public void AvancarBarra()
+    {
+        float animCuts;
+        float questions = 0;
+        for(int i = 0; i < data.rawdata.Count; i++)
+        {
+            for(int j = 0; j < data.rawdata[i].Length; j++)
+            {
+                questions++;
+            }
+        }
+        animCuts = 96 / questions;
 
+        if (progressBar.GetCurrentAnimatorStateInfo(0).normalizedTime == animCuts * resposta.Count)
+        {
+            progressBar.speed = 0;
+        }
+        else
+        {
+            progressBar.speed = 1;
+        }
+
+
+    }
     /*public void SetScore()
     {
         score.text = score.text + " " + BarraScore.GetComponent<ProgessBar>().current + "/" + BarraScore.GetComponent<ProgessBar>().maximum;
