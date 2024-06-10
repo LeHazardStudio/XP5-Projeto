@@ -226,8 +226,8 @@ public class SceneControl : MonoBehaviour
                     resposta.Add((questionNumber + 1) + " - " + (contadorResposta + 1) + " : " + comarcaPetOrd.options[comarcaPetOrd.value].text + " " + competenciaPetOrd.options[competenciaPetOrd.value].text + "\n" + fundPetOrd.text);
                     for(int i = 0; i < fundPeticao.Count; i++)
                     {
-                    resposta.Add(" " + "Fundamentação" + " " + i + " " + fundPeticao[i]);
-                    }
+                    resposta[2 + contadorResposta] = "\n" + resposta[2 + contadorResposta] + " " + "Fundamentação" + " " + (i + 1) + " : " + fundPeticao[i];
+        }
                     ChecarResposta(x, questionNumber, contadorResposta);
                     UIController.piscarTela.SetActive(true);
                     break;
@@ -236,13 +236,14 @@ public class SceneControl : MonoBehaviour
                     resposta.Add((questionNumber + 1) + " - " + (contadorResposta + 1) + " : " + comarcaPetEsp.options[comarcaPetEsp.value].text + " " + competenciaPetEsp.options[competenciaPetEsp.value].text + " " + procedimentoPetEsp.options[competenciaPetEsp.value].text + "\n " + fundPetEsp.text);
                     for(int i = 0; i < fundPeticao.Count; i++)
                     {
-                    resposta.Add(" " + "Fundamentação" + " " + i + " " + fundPeticao[i]);
+                    resposta[2 + contadorResposta] = resposta[2 + contadorResposta] + " " + "Fundamentação" + " " + i + " " + fundPeticao[i];
                     }
                     ChecarResposta(x, questionNumber, contadorResposta);
                     UIController.piscarTela.SetActive(true);
                     break;
         }
         EnviarResposta();
+        
         
     }
 
@@ -374,7 +375,7 @@ public class SceneControl : MonoBehaviour
 
     public void EnviarResposta()
     {
-        print(resposta[0]);
+        print(resposta[contadorResposta + 2]);
         data.PegarResposta(resposta);
         resetInserts();
         //progressBar.GetComponent<Animator>().SetBool("pause", false);
