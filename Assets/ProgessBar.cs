@@ -86,7 +86,6 @@ public class ProgessBar : MonoBehaviour
         {
             //this.GetComponent<Animator>().SetBool("pause",true);
             this.GetComponent<Animator>().SetFloat("speed", 0);
-            print("aaa" + currenteframe);
         }
     }
     int answers()
